@@ -1,8 +1,7 @@
-package iscteiul.ista;
+package iscteiul.ista.battleship;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import iscteiul.ista.battleship.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
 class ShipTest {
