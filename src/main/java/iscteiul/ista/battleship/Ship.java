@@ -21,7 +21,7 @@ public abstract class Ship implements IShip {
      * @param pos
      * @return
      */
-    static Ship buildShip(String shipKind, Compass bearing, Position pos) {
+    public static Ship buildShip(String shipKind, Compass bearing, Position pos) {
         Ship s;
         switch (shipKind) {
             case BARCA:
@@ -233,7 +233,9 @@ public abstract class Ship implements IShip {
                 position.shoot();
         }
     }
-
+    public void addTestPosition(IPosition pos) {
+        positions.add(pos);
+    }
 
     @Override
     public String toString() {
