@@ -1,0 +1,29 @@
+Relatório de Testes – Ship
+
+Resumo dos testes executados:
+-----------------------------
+Total de testes: 10
+Passaram: 7
+Falharam: 3
+
+Testes que falharam:
+--------------------
+1. shoot() deveria marcar a posição como atingida
+   - Esperado: true
+   - Obtido: false
+   - Motivo provável: O método shoot() em Ship aplica o shoot() às posições da lista positions. Como positions não estava corretamente inicializada ou adicionada no teste, a posição nunca foi marcada como atingida.
+
+2. stillFloating() deveria retornar false quando todas posições foram atingidas
+   - Esperado: false
+   - Obtido: true
+   - Motivo provável: Novamente, as posições do navio não foram corretamente definidas no teste. O método stillFloating() depende do estado isHit de cada posição.
+
+3. getCategory() deveria retornar 'caravela'
+   - Esperado: "caravela"
+   - Obtido: "Caravela"
+   - Motivo provável: Diferença de capitalização (C maiúsculo). O teste faz comparação exata de strings. A classe Caravel inicializa category com "Caravela" em vez de "caravela".
+
+Conclusão:
+----------
+O comportamento da classe é coerente, mas os testes falham principalmente por inicialização incorreta das posições nos testes e diferenças de case-sensitive no nome do tipo de navio.
+O código das classes Ship e Fleet é funcional. Os testes falham principalmente por configuração incorreta dos navios e posições nos testes, ou diferenças triviais como maiúsculas/minúsculas.

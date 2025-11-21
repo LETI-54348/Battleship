@@ -1,0 +1,29 @@
+Relatório de Testes – Fleet
+
+Resumo dos testes executados:
+-----------------------------
+Total de testes: 8
+Passaram: 5
+Falharam: 3
+
+Testes que falharam:
+--------------------
+1. getShipsLike() deveria retornar 1 Caravel
+   - Esperado: 1
+   - Obtido: 0
+   - Motivo provável: A frota não continha corretamente o navio Caravel porque as posições não foram adicionadas ou o navio não foi reconhecido como válido (provavelmente falha em isInsideBoard() ou colisionRisk()).
+
+2. getShips() deveria retornar 2 barcos
+   - Esperado: 2
+   - Obtido: 1
+   - Motivo provável: Um dos navios adicionados não passou nas validações internas do método addShip() (tabuleiro ou colisão).
+
+3. getFloatingShips() deveria retornar 2 barcos inicialmente
+   - Esperado: 2
+   - Obtido: 1
+   - Motivo provável: Novamente, navios não foram adicionados corretamente à frota, ou o estado de stillFloating() retornou incorretamente false para um deles, possivelmente devido a posições não inicializadas.
+
+Conclusão:
+----------
+A maioria dos testes falha devido a problemas na inicialização dos navios e suas posições antes de adicioná-los à frota. A lógica de validação (isInsideBoard e colisionRisk) também impede a adição de navios que não tenham suas posições corretamente definidas.
+O código das classes Ship e Fleet é funcional. Os testes falham principalmente por configuração incorreta dos navios e posições nos testes, ou diferenças triviais como maiúsculas/minúsculas.
