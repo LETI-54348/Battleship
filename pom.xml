@@ -15,6 +15,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>17</maven.compiler.release>
+      <allure.version>2.27.0</allure.version> <!-- Versão para dependências Allure -->
   </properties>
 
   <dependencyManagement>
@@ -42,6 +43,12 @@
       <version>2.25.2</version>
       <scope>compile</scope>
     </dependency>
+      <!-- Dependency for Allure Java Commons to manage annotations -->
+      <dependency>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-java-commons</artifactId>
+          <version>${allure.version}</version>
+      </dependency>
 </dependencies> <!-- Dependecies fechada -->
   <reporting>
     <plugins>
